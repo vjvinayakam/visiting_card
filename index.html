@@ -1,0 +1,413 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f6f3">
+<title>My Digital Visiting Card</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<style>
+:root {
+  --background: #f7f6f3;
+  --text: #242424;
+  --muted: #77736f;
+  --black: #171717;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 20px 12px;
+  background: #eae9e6;
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 100%;
+  max-width: 400px;
+  min-height: 740px;
+  padding: 20px 23px 25px;
+  background: var(--background);
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 15px 50px rgba(0,0,0,.09);
+  overflow: hidden;
+}
+
+.cover {
+  width: 100%;
+  height: 158px;
+  border-radius: 12px;
+  object-fit: cover;
+  display: block;
+  background: #d9d9d5;
+}
+
+.profile-wrap {
+  position: relative;
+  width: 116px;
+  height: 116px;
+  margin: -62px auto 0;
+}
+
+.profile {
+  width: 116px;
+  height: 116px;
+  border-radius: 50%;
+  border: 4px solid var(--background);
+  object-fit: cover;
+  background: #dededb;
+}
+
+h1 {
+  font-size: 27px;
+  line-height: 1.2;
+  margin: 17px 0 5px;
+  font-weight: 750;
+  letter-spacing: -.7px;
+}
+
+.job {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.brand {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-top: 11px;
+  color: #484541;
+}
+
+.bio {
+  margin: 22px auto 21px;
+  max-width: 300px;
+  font-size: 12px;
+  line-height: 1.7;
+  color: #77736f;
+}
+
+button, a { -webkit-tap-highlight-color: transparent; }
+
+.save-contact {
+  display: flex;
+  width: 190px;
+  min-height: 49px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  border: none;
+  border-radius: 30px;
+  background: var(--black);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.social-grid {
+  width: 230px;
+  margin: 0 auto 21px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 17px 22px;
+  justify-items: center;
+}
+
+.social {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 13px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  transition: transform .15s ease;
+}
+
+.social:active { transform: scale(.92); }
+.social svg { width: 31px; height: 31px; }
+
+.phone { background: #59b936; }
+.whatsapp { background: #20a957; }
+.email { background: #4599e8; }
+.qr-button { background: #252525; }
+.instagram {
+  background: linear-gradient(135deg, #7146bd, #e73577, #ffb34d);
+}
+.facebook { background: #2474df; }
+
+.qr-panel {
+  display: none;
+  margin: 20px auto 0;
+  padding: 17px;
+  width: 230px;
+  background: white;
+  border: 1px solid #e8e5df;
+  border-radius: 16px;
+}
+
+.qr-panel.visible { display: block; }
+
+#qrcode {
+  display: flex;
+  justify-content: center;
+  min-height: 180px;
+  margin: 12px auto;
+}
+
+#qrcode img, #qrcode canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+.qr-heading {
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.qr-note {
+  font-size: 10px;
+  color: #777;
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+}
+
+footer {
+  margin-top: 25px;
+  font-size: 10px;
+  color: #a09c95;
+  letter-spacing: 1.5px;
+}
+
+@media (max-width: 360px) {
+  .card { padding: 16px 17px 22px; }
+  .cover { height: 140px; }
+  h1 { font-size: 24px; }
+}
+</style>
+</head>
+
+<body>
+<main class="card">
+
+  <!-- Replace with your cover image URL -->
+  <img class="cover"
+       src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=85"
+       alt="Cover banner">
+
+  <div class="profile-wrap">
+    <!-- Replace with your profile photo URL -->
+    <img class="profile"
+         src="https://placehold.co/300x300/e3e3df/333333?text=YOUR+PHOTO"
+         alt="Profile photo">
+  </div>
+
+  <!-- YOUR DETAILS -->
+  <h1>Your Name</h1>
+
+  <p class="job">
+    Marketing Data Analyst | AI Automation
+  </p>
+
+  <div class="brand">YOUR BRAND</div>
+
+  <p class="bio">
+    I help businesses improve tracking, understand their data,
+    and automate repetitive work using AI and automation.
+  </p>
+
+  <!-- Save contact -->
+  <a class="save-contact" href="#" id="saveContact">
+    Save Contact
+  </a>
+
+  <!-- Contact and social icons -->
+  <div class="social-grid">
+
+    <a class="social phone" id="phoneLink"
+       href="#" aria-label="Call">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M6.6 10.8a15.4 15.4 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24
+        c1.1.36 2.3.55 3.6.55a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1
+        C10.6 21 3 13.4 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1
+        c0 1.25.19 2.45.55 3.6a1 1 0 0 1-.25 1z"/>
+      </svg>
+    </a>
+
+    <a class="social whatsapp" id="whatsappLink"
+       href="#" target="_blank" rel="noopener"
+       aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white"
+           stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20l1.2-5.4A8.4 8.4 0 1 1 21 11.5Z"/>
+        <path d="M8.8 8.1c.4 2.1 2.1 3.8 4.2 4.2l1.3-1.1 2 .9
+        c-.2 1.3-1.2 2.1-2.5 2.1-3.2-.2-6.4-3.4-6.6-6.6
+        0-1.3.8-2.3 2.1-2.5l.9 2z"/>
+      </svg>
+    </a>
+
+    <a class="social email" id="emailLink"
+       href="#" aria-label="Email">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white"
+           stroke-width="1.8" stroke-linejoin="round">
+        <rect x="3" y="5" width="18" height="14" rx="2"/>
+        <path d="m4 7 8 6 8-6"/>
+      </svg>
+    </a>
+
+    <button class="social qr-button" id="qrToggle"
+            type="button" aria-label="Show QR code">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white"
+           stroke-width="2">
+        <rect x="3" y="3" width="7" height="7"/>
+        <rect x="14" y="3" width="7" height="7"/>
+        <rect x="3" y="14" width="7" height="7"/>
+        <path d="M14 14h3v3h-3zM20 14v3M14 20h3M20 20v1"/>
+      </svg>
+    </button>
+
+    <a class="social instagram" id="instagramLink"
+       href="#" target="_blank" rel="noopener"
+       aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white"
+           stroke-width="1.8">
+        <rect x="3" y="3" width="18" height="18" rx="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/>
+      </svg>
+    </a>
+
+    <a class="social facebook" id="facebookLink"
+       href="#" target="_blank" rel="noopener"
+       aria-label="Facebook">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5
+        1.6-1.5h1.7V3.9c-.3 0-1.4-.1-2.6-.1
+        -2.6 0-4.4 1.6-4.4 4.5V10H7v3h2.8v8z"/>
+      </svg>
+    </a>
+
+  </div>
+
+  <div class="qr-panel" id="qrPanel">
+    <div class="qr-heading">SCAN TO OPEN MY CARD</div>
+    <div id="qrcode"></div>
+    <div class="qr-note">
+      Scan to view my profile and contact details.
+    </div>
+  </div>
+
+  <footer>LET'S CONNECT</footer>
+</main>
+
+<script>
+  // EDIT THESE DETAILS
+  const person = {
+    name: "Your Name",
+    title: "Marketing Data Analyst | AI Automation",
+    phone: "+91XXXXXXXXXX",
+    email: "you@example.com",
+    website: "https://vjvinayakam.github.io/",
+    whatsapp: "91XXXXXXXXXX",
+    instagram: "https://www.instagram.com/YOUR_USERNAME/",
+    facebook: "https://www.facebook.com/YOUR_USERNAME/"
+  };
+
+  // The QR code points to this published webpage.
+  const profileURL = window.location.href.split("#")[0];
+
+  document.getElementById("phoneLink").href =
+    "tel:" + person.phone;
+
+  document.getElementById("whatsappLink").href =
+    "https://wa.me/" + person.whatsapp;
+
+  document.getElementById("emailLink").href =
+    "mailto:" + person.email;
+
+  document.getElementById("instagramLink").href =
+    person.instagram;
+
+  document.getElementById("facebookLink").href =
+    person.facebook;
+
+  // Download a contact card.
+  document.getElementById("saveContact").addEventListener("click", function(e) {
+    e.preventDefault();
+
+    const esc = value => String(value)
+      .replace(/\\/g, "\\\\")
+      .replace(/\n/g, "\\n")
+      .replace(/,/g, "\\,")
+      .replace(/;/g, "\\;");
+
+    const vcard = [
+      "BEGIN:VCARD",
+      "VERSION:3.0",
+      "FN:" + esc(person.name),
+      "TITLE:" + esc(person.title),
+      "TEL;TYPE=CELL:" + esc(person.phone),
+      "EMAIL:" + esc(person.email),
+      "URL:" + esc(person.website),
+      "END:VCARD"
+    ].join("\r\n");
+
+    const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+
+    link.href = url;
+    link.download = "digital-visiting-card.vcf";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  });
+
+  // Reveal the QR code on demand.
+  document.getElementById("qrToggle").addEventListener("click", function() {
+    const panel = document.getElementById("qrPanel");
+    const opening = !panel.classList.contains("visible");
+
+    panel.classList.toggle("visible", opening);
+    this.setAttribute("aria-expanded", String(opening));
+
+    if (opening && !panel.dataset.generated) {
+      if (window.QRCode) {
+        new QRCode(document.getElementById("qrcode"), {
+          text: profileURL,
+          width: 180,
+          height: 180,
+          colorDark: "#171717",
+          colorLight: "#ffffff",
+          correctLevel: QRCode.CorrectLevel.H
+        });
+        panel.dataset.generated = "true";
+      } else {
+        document.getElementById("qrcode").textContent =
+          "QR library unavailable. Reload with an internet connection.";
+      }
+    }
+  });
+</script>
+</body>
+</html>
