@@ -5,7 +5,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#f7f6f3">
-<title>My Digital Visiting Card</title>
+<meta name="description" content="Vijai Vinayakam - Marketing Data Analyst and AI Automation">
+<title>Vijai Vinayakam | Digital Visiting Card</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
@@ -25,8 +26,7 @@ body {
   padding: 20px 12px;
   background: #eae9e6;
   color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-               Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,6 +49,7 @@ body {
   height: 158px;
   border-radius: 12px;
   object-fit: cover;
+  object-position: center;
   display: block;
   background: #d9d9d5;
 }
@@ -100,7 +101,9 @@ h1 {
   color: #77736f;
 }
 
-button, a { -webkit-tap-highlight-color: transparent; }
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
 
 .save-contact {
   display: flex;
@@ -143,15 +146,21 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 
 .social:active { transform: scale(.92); }
-.social svg { width: 31px; height: 31px; }
+
+.social svg {
+  width: 31px;
+  height: 31px;
+}
 
 .phone { background: #59b936; }
 .whatsapp { background: #20a957; }
 .email { background: #4599e8; }
 .qr-button { background: #252525; }
+
 .instagram {
   background: linear-gradient(135deg, #7146bd, #e73577, #ffb34d);
 }
+
 .facebook { background: #2474df; }
 
 .qr-panel {
@@ -201,6 +210,7 @@ footer {
   .card { padding: 16px 17px 22px; }
   .cover { height: 140px; }
   h1 { font-size: 24px; }
+  .social-grid { gap: 15px 16px; }
 }
 </style>
 </head>
@@ -208,64 +218,57 @@ footer {
 <body>
 <main class="card">
 
-  <!-- Replace with your cover image URL -->
   <img class="cover"
-     src="cover.png"
-     alt="AI Automation and Data Analytics cover">
+       src="cover.png"
+       alt="AI Automation and Data Analytics cover">
 
   <div class="profile-wrap">
-    <!-- Replace with your profile photo URL -->
     <img class="profile"
-     src="profile.jpg"
-     alt="Profile photo">
+         src="profile.jpg"
+         alt="Vijai Vinayakam">
   </div>
 
-  <!-- YOUR DETAILS -->
   <h1>Vijai Vinayakam</h1>
 
   <p class="job">
     Marketing Data Analyst | AI Automation
   </p>
 
-  <div class="brand">Review Boost</div>
+  <div class="brand">REVIEW BOOST</div>
 
   <p class="bio">
     I help businesses improve tracking, understand their data,
     and automate repetitive work using AI and automation.
   </p>
 
-  <!-- Save contact -->
   <a class="save-contact" href="#" id="saveContact">
     Save Contact
   </a>
 
-  <!-- Contact and social icons -->
   <div class="social-grid">
 
-    <a class="social phone" id="phoneLink"
-       href="#" aria-label="Call">
+    <!-- Phone -->
+    <a class="social phone" id="phoneLink" href="#"
+       aria-label="Call Vijai">
       <svg viewBox="0 0 24 24" fill="currentColor">
-        <path d="M6.6 10.8a15.4 15.4 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24
-        c1.1.36 2.3.55 3.6.55a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1
-        C10.6 21 3 13.4 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1
-        c0 1.25.19 2.45.55 3.6a1 1 0 0 1-.25 1z"/>
+        <path d="M6.6 10.8a15.4 15.4 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24c1.1.36 2.3.55 3.6.55a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.6 21 3 13.4 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.19 2.45.55 3.6a1 1 0 0 1-.25 1z"/>
       </svg>
     </a>
 
+    <!-- WhatsApp -->
     <a class="social whatsapp" id="whatsappLink"
        href="#" target="_blank" rel="noopener"
        aria-label="WhatsApp">
       <svg viewBox="0 0 24 24" fill="none" stroke="white"
            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
         <path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20l1.2-5.4A8.4 8.4 0 1 1 21 11.5Z"/>
-        <path d="M8.8 8.1c.4 2.1 2.1 3.8 4.2 4.2l1.3-1.1 2 .9
-        c-.2 1.3-1.2 2.1-2.5 2.1-3.2-.2-6.4-3.4-6.6-6.6
-        0-1.3.8-2.3 2.1-2.5l.9 2z"/>
+        <path d="M8.8 8.1c.4 2.1 2.1 3.8 4.2 4.2l1.3-1.1 2 .9c-.2 1.3-1.2 2.1-2.5 2.1-3.2-.2-6.4-3.4-6.6-6.6 0-1.3.8-2.3 2.1-2.5l.9 2z"/>
       </svg>
     </a>
 
-    <a class="social email" id="emailLink"
-       href="#" aria-label="Email">
+    <!-- Email -->
+    <a class="social email" id="emailLink" href="#"
+       aria-label="Email">
       <svg viewBox="0 0 24 24" fill="none" stroke="white"
            stroke-width="1.8" stroke-linejoin="round">
         <rect x="3" y="5" width="18" height="14" rx="2"/>
@@ -273,8 +276,10 @@ footer {
       </svg>
     </a>
 
+    <!-- QR code toggle -->
     <button class="social qr-button" id="qrToggle"
-            type="button" aria-label="Show QR code">
+            type="button" aria-label="Show QR code"
+            aria-expanded="false">
       <svg viewBox="0 0 24 24" fill="none" stroke="white"
            stroke-width="2">
         <rect x="3" y="3" width="7" height="7"/>
@@ -284,6 +289,7 @@ footer {
       </svg>
     </button>
 
+    <!-- Instagram -->
     <a class="social instagram" id="instagramLink"
        href="#" target="_blank" rel="noopener"
        aria-label="Instagram">
@@ -295,13 +301,12 @@ footer {
       </svg>
     </a>
 
+    <!-- Facebook -->
     <a class="social facebook" id="facebookLink"
        href="#" target="_blank" rel="noopener"
        aria-label="Facebook">
       <svg viewBox="0 0 24 24" fill="currentColor">
-        <path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5
-        1.6-1.5h1.7V3.9c-.3 0-1.4-.1-2.6-.1
-        -2.6 0-4.4 1.6-4.4 4.5V10H7v3h2.8v8z"/>
+        <path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.5V10H7v3h2.8v8z"/>
       </svg>
     </a>
 
@@ -319,19 +324,19 @@ footer {
 </main>
 
 <script>
-  // EDIT THESE DETAILS
+  // Contact details
   const person = {
     name: "Vijai Vinayakam",
     title: "Marketing Data Analyst | AI Automation",
     phone: "+919150257384",
-    email: "vijay5310@gmail.com.com",
+    email: "vijay5310@gmail.com",
     website: "https://vjvinayakam.github.io/",
-    whatsapp: "+919150257384",
+    whatsapp: "919150257384",
     instagram: "https://www.instagram.com/YOUR_USERNAME/",
     facebook: "https://www.facebook.com/YOUR_USERNAME/"
   };
 
-  // The QR code points to this published webpage.
+  // Use the published URL for the QR code.
   const profileURL = window.location.href.split("#")[0];
 
   document.getElementById("phoneLink").href =
@@ -349,7 +354,7 @@ footer {
   document.getElementById("facebookLink").href =
     person.facebook;
 
-  // Download a contact card.
+  // Save Contact: download a vCard file.
   document.getElementById("saveContact").addEventListener("click", function(e) {
     e.preventDefault();
 
@@ -370,12 +375,15 @@ footer {
       "END:VCARD"
     ].join("\r\n");
 
-    const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
+    const blob = new Blob([vcard], {
+      type: "text/vcard;charset=utf-8"
+    });
+
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
 
     link.href = url;
-    link.download = "digital-visiting-card.vcf";
+    link.download = "Vijai-Vinayakam.vcf";
     document.body.appendChild(link);
     link.click();
     link.remove();
@@ -383,7 +391,7 @@ footer {
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   });
 
-  // Reveal the QR code on demand.
+  // Show or hide the QR code.
   document.getElementById("qrToggle").addEventListener("click", function() {
     const panel = document.getElementById("qrPanel");
     const opening = !panel.classList.contains("visible");
@@ -401,10 +409,11 @@ footer {
           colorLight: "#ffffff",
           correctLevel: QRCode.CorrectLevel.H
         });
+
         panel.dataset.generated = "true";
       } else {
         document.getElementById("qrcode").textContent =
-          "QR library unavailable. Reload with an internet connection.";
+          "QR unavailable. Please reload with an internet connection.";
       }
     }
   });
